@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotels Page - The Reviewers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header Section -->
+    <header>
+      <div class="logo">The Reviewers</div>
+      <input type="text" placeholder="Search hotels, cities, or locations" id="search-bar">
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Hotels</a>
+        <a href="#">Restaurants</a>
+        <a href="#">Attractions</a>
+        <a href="#">Flights</a>
+      </nav>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="filters">
+      <h2>Filters</h2>
+      
+      <label>Location</label>
+      <input type="text" placeholder="Enter city or location">
+
+      <label>Price Range</label>
+      <div class="price-range">
+        <input type="number" placeholder="From" min="0" id="min-price">
+        <input type="number" placeholder="To" min="0" id="max-price">
+        <button onclick="filterHotels()">Apply Filters</button>
+        <button onclick="resetFilters()">Reset Filters</button>
+      </div>
+
+      <label>Star Rating</label>
+      <select>
+        <option>All</option>
+        <option>5 Stars</option>
+        <option>4 Stars</option>
+        <option>3 Stars</option>
+      </select>
+
+      <label>Amenities</label>
+      <input type="checkbox"> Wi-Fi<br>
+      <input type="checkbox"> Pool<br>
+      <input type="checkbox"> Pet-Friendly<br>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+      <section class="hotel-listings">
+        <!-- Hyatt Regency Sofia -->
+        <article class="hotel-card" data-name="Hyatt Regency Sofia" data-price="150">
+          <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2020/11/09/0401/Hyatt-Regency-Sofia-P068-Night-Exterior.jpg/Hyatt-Regency-Sofia-P068-Night-Exterior.16x9.jpg" alt="Hyatt Regency Sofia">
+          <div class="hotel-info">
+            <h3>Hyatt Regency Sofia</h3>
+            <p>This five-star hotel near Alexander Nevsky Cathedral offers luxurious rooms and a rooftop bar with panoramic views. Ideal for business and leisure travelers, it combines modern comfort with Bulgarian charm.</p>
+            <p>Rating: ⭐⭐⭐⭐⭐</p>
+            <p>Starting at $150/night</p>
+            <button>Book Now</button>
+          </div>
+        </article>
+    
+        <!-- Grand Hotel Millennium Sofia -->
+        <article class="hotel-card" data-name="Grand Hotel Millennium Sofia" data-price="180">
+          <img src="https://grandhotelmillenniumsofia.bg/wp-content/uploads/2019/10/grand-hotel-millennium-sofia-fb.jpg" alt="Grand Hotel Millennium Sofia">
+          <div class="hotel-info">
+            <h3>Grand Hotel Millennium Sofia</h3>
+            <p>One of Sofia's tallest hotels, it offers stunning views, a top-floor restaurant, and modern amenities. It’s perfect for guests looking for a luxury experience in the city center.</p>
+            <p>Rating: ⭐⭐⭐⭐⭐</p>
+            <p>Starting at $180/night</p>
+            <button>Book Now</button>
+          </div>
+        </article>
+    
+        <!-- Grand Hotel Sofia -->
+        <article class="hotel-card" data-name="Grand Hotel Sofia" data-price="160">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/13665903.jpg?k=cea53844cfdb848e12a455326f59fb9a90543e682175ca3f946f19008d2332d6&o=&hp=1" alt="Grand Hotel Sofia">
+          <div class="hotel-info">
+            <h3>Grand Hotel Sofia</h3>
+            <p>Known for its art-filled interiors, this classic hotel offers spacious rooms and easy access to cultural landmarks. It’s a top choice for travelers seeking a refined, central experience.</p>
+            <p>Rating: ⭐⭐⭐⭐⭐</p>
+            <p>Starting at $160/night</p>
+            <button>Book Now</button>
+          </div>
+        </article>
+    
+        <!-- InterContinental Sofia -->
+        <article class="hotel-card" data-name="InterContinental Sofia" data-price="170">
+          <img src="https://digital.ihg.com/is/image/ihg/intercontinental-sofia-5488872488-2x1" alt="InterContinental Sofia">
+          <div class="hotel-info">
+            <h3>InterContinental Sofia</h3>
+            <p>With a prime location by Alexander Nevsky Cathedral, this hotel blends luxury with local flavor. Guests enjoy stylish rooms and a restaurant with a mix of international and Bulgarian dishes.</p>
+            <p>Rating: ⭐⭐⭐⭐⭐</p>
+            <p>Starting at $170/night</p>
+            <button>Book Now</button>
+          </div>
+        </article>
+    
+        <!-- Sofia Hotel Balkan -->
+        <article class="hotel-card" data-name="Sofia Hotel Balkan" data-price="140">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/16181330.jpg?k=c67d0ab0efc2ff5a52d2d44265448d2d189ffe0a33c63aef1073c26cf4ee8498&o=&hp=1" alt="Sofia Hotel Balkan">
+          <div class="hotel-info">
+            <h3>Sofia Hotel Balkan</h3>
+            <p>Next to Serdika metro station, this historic hotel features elegant rooms and unique architectural elements. Guests can explore ancient ruins within the hotel itself.</p>
+            <p>Rating: ⭐⭐⭐⭐⭐</p>
+            <p>Starting at $140/night</p>
+            <button>Book Now</button>
+          </div>
+        </article>
+    
+        <!-- Sense Hotel Sofia -->
+        <article class="hotel-card" data-name="Sense Hotel Sofia" data-price="175">
+          <img src="https://www.hotel-boutique.it/wp-content/uploads/2023/01/20-20.jpg" alt="Sense Hotel Sofia">
+          <div class="hotel-info">
+            <h3>Sense Hotel Sofia</h3>
+            <p>This design-focused hotel on Sofia’s main boulevard features a popular rooftop bar with city views. It offers modern luxury with a stylish twist.</p>
+            <p>Rating: ⭐⭐⭐⭐⭐</p>
+            <p>Starting at $175/night</p>
+            <button>Book Now</button>
+          </div>
+        </article>
+    
+        <!-- Hotel Marinela Sofia -->
+        <article class="hotel-card" data-name="Hotel Marinela Sofia" data-price="130">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/403908607.jpg?k=e18722ccee844bae1a313b6acf366499af1cbc15bfa17a66d09e33601aed00a9&o=&hp=1" alt="Hotel Marinela Sofia">
+          <div class="hotel-info">
+            <h3>Hotel Marinela Sofia</h3>
+            <p>Famous for its Japanese garden, this hotel offers various dining options and extensive conference facilities. It’s popular with both business and leisure travelers.</p>
+            <p>Rating: ⭐⭐⭐⭐</p>
+            <p>Starting at $130/night</p>
+            <button>Book Now</button>
+          </div>
+        </article>
+    
+        <!-- Arena di Serdica Residence Hotel -->
+        <article class="hotel-card" data-name="Arena di Serdica Residence Hotel" data-price="155">
+          <img src="https://tandem-travel.com/wp-content/uploads/htl.arena-di-serdika.jpg" alt="Arena di Serdica Residence Hotel">
+          <div class="hotel-info">
+            <h3>Arena di Serdica Residence Hotel</h3>
+            <p>This boutique hotel, built around Roman ruins, offers a unique historical experience with modern luxury. It’s ideal for history lovers and those seeking tranquility.</p>
+            <p>Rating: ⭐⭐⭐⭐⭐</p>
+            <p>Starting at $155/night</p>
+            <button>Book Now</button>
+          </div>
+        </article>
+    
+        <!-- Best Western Premier Sofia Airport Hotel -->
+        <article class="hotel-card" data-name="Best Western Premier Sofia Airport Hotel" data-price="120">
+          <img src="https://images.bestwestern.com/bwi/brochures/77722/photos/1024/16487551.jpg" alt="Best Western Premier Sofia Airport Hotel">
+          <div class="hotel-info">
+            <h3>Best Western Premier Sofia Airport Hotel</h3>
+            <p>Located near the airport, this hotel offers comfortable rooms, a rooftop terrace, and convenient amenities. Ideal for travelers looking for ease and style close to Sofia’s airport.</p>
+            <p>Rating: ⭐⭐⭐⭐</p>
+            <p>Starting at $120/night</p>
+            <button>Book Now</button>
+          </div>
+        </article>
+      </section>
+    </main>
+    
+
+  <!-- Footer -->
+  <footer>
+    <p>Quick Links: About Us | Contact | Careers | Privacy Policy</p>
+    <div class="social-icons"></div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById("search-bar").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        searchHotels();
+      }
+    });
+
+    function searchHotels() {
+      const searchInput = document.getElementById("search-bar").value.toLowerCase();
+      const hotelCards = document.querySelectorAll(".hotel-card");
+
+      hotelCards.forEach(card => {
+        const hotelName = card.getAttribute("data-name").toLowerCase();
+        card.style.display = hotelName.includes(searchInput) ? "block" : "none";
+      });
+    }
+
+    function filterHotels() {
+      const minPrice = parseInt(document.getElementById("min-price").value) || 0;
+      const maxPrice = parseInt(document.getElementById("max-price").value) || Infinity;
+
+      const hotelCards = document.querySelectorAll(".hotel-card");
+      hotelCards.forEach(card => {
+        const price = parseInt(card.getAttribute("data-price"));
+        card.style.display = (price >= minPrice && price <= maxPrice) ? "block" : "none";
+      });
+    }
+
+    function resetFilters() {
+      document.getElementById("min-price").value = "";
+      document.getElementById("max-price").value = "";
+      document.getElementById("search-bar").value = "";
+
+      const hotelCards = document.querySelectorAll(".hotel-card");
+      hotelCards.forEach(card => {
+        card.style.display = "block";
+      });
+    }
+  </script>
+
+</body>
+</html>
