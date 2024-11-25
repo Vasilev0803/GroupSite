@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  padding: 1em;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em auto;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 800px;
+  text-align: left;
+}
+
+.filters h2 {
+  margin-bottom: 1em;
+}
+
+.price-range {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.price-range input[type="number"] {
+  width: 45%;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+header input[type="text"] {
+  width: 40%;
+  padding: 0.5em;
+}
+
+header nav a {
+  color: white;
+  margin-left: 1em;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  margin: 1em;
+  flex: 1;
+}
+
+.filters {
+  width: 20%;
+  padding: 1em;
+  border-right: 1px solid #ddd;
+}
+
+.hotel-listings {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 0 auto;
+  max-width: 1300px; /* Adjusted to fit three 400px cards with gaps */
+  padding: 2em 0;
+}
+
+.hotel-card {
+  width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-card img {
+  width: 100%;
+  height: auto;
+}
+
+.hotel-info {
+  padding: 1em;
+}
+
+
+
+.reviews {
+  margin: 2em;
+}
+
+footer {
+  padding: 1em;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
+.price-range {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.price-range input[type="number"] {
+  width: 45%;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
