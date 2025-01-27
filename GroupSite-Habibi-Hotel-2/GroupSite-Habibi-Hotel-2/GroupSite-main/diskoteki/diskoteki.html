@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Популярни Дискотеки в България</title>
+    <style>
+        /* Основен стил */
+        body {
+            font-family: 'Arial', sans-serif;
+    background-image: url('Discko.jpg'); /* Make sure this path is correct */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2.5em;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .club {
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards; /* Ускоряване на анимацията */
+        }
+        .club:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+        }
+        .club h3 {
+            margin: 0;
+            color: #343a40;
+            font-size: 1.5em;
+        }
+        .rating {
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .star-rating {
+            color: #ffd700;
+        }
+        .review {
+            margin-top: 10px;
+            font-style: italic;
+            color: #6c757d;
+        }
+        .recommendations {
+            margin-top: 10px;
+            color: #495057;
+        }
+        body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('disco.jpg'); /* Replace with the path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-color: #1a2b45;
+    margin: 0;
+    padding: 0;
+}
+
+        /* Стилиране на търсачката и падащото меню */
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-bar, .dropdown {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            font-size: 16px;
+            margin-bottom: 10px;
+            transition: border 0.2s;
+        }
+        .search-bar:focus, .dropdown:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+        .details {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #495057;
+        }
+        /* Добавяне на стил за бутоните */
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+.button:hover {
+    background-color: #0056b3;
+}
+
+        .button:hover {
+            background-color: #218838;
+        }
+        /* Анимации */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+
+        .club {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+
+        header {
+    background: linear-gradient(45deg, #1abc9c, #16a085);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease-out;
+}
+
+header .logo img {
+    width: 80px;
+    height: 80px;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: #34495e;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+header nav a:hover {
+    background-color: #1abc9c;
+    color: #34495e;
+}
+
+header .account-options a {
+    color: #34495e;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+footer {
+    background-color: #1abc9c;
+    color: #aec6cf;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer .footer-links {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #34495e;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ecf0f1;
+}
+
+/* Secret Section */
+footer .secret{
+    color: transparent;
+    cursor: pointer;
+    margin-top: 10px;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="./iamges/logo.png" alt="The Reviewist Logo">
+        </div>
+        <nav>
+            <a href="/GroupSite-Habibi-Hotel-2/GroupSite-main/HomePage/homePage.html">Home</a>
+            <a href="/GroupSite-Habibi-Hotel-2/GroupSite-main/habibi-hotel/BERKENTMONT.html">Hotels</a>
+            <a href="/GroupSite-Habibi-Hotel-2/GroupSite-main/GroupSite-RowandanCuisine/SofiaRestaurants.html">Restaurants</a>
+            <a href="/GroupSite-Habibi-Hotel-2/GroupSite-main/diskoteki/diskoteki.html">Discos</a>
+            <a href="/GroupSite-Habibi-Hotel-2/GroupSite-main/Casino.html">Casinos</a>
+        </nav>
+        <div class="account-options">
+            <a href="/GroupSite-Habibi-Hotel-2/GroupSite-main/HomePage/login.html">Sign In</a> | <a href="#sign-up">Sign Up</a>
+        </div>
+    </header>
+
+    <h1>Популярни Дискотеки в България</h1>
+    
+    <div class="container">
+
+        <div class="search-container">
+            <!-- Търсачка по име -->
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-bar" 
+                onkeyup="filterClubs()" 
+                placeholder="Търсене на дискотека по име..."
+            >
+
+            <!-- Падащо меню за избор на град -->
+            <select id="cityDropdown" class="dropdown" onchange="filterClubs()">
+                <option value="всички">Всички градове</option>
+                <option value="София">София</option>
+                <option value="Пловдив">Пловдив</option>
+                <option value="Варна">Варна</option>
+                <option value="Бургас">Бургас</option>
+                <option value="Русе">Русе</option>
+                <option value="Стара Загора">Стара Загора</option>
+                <option value="Велико Търново">Велико Търново</option>
+            </select>
+        </div>
+
+        <!-- София - Yalta Club -->
+        <div class="club" data-city="София">
+            <h3>Yalta Club, София</h3>
+            <p class="rating"><span class="star-rating">★★★★★</span></p>
+            <p class="review">Рецензия: Известен с висококачествена електронна музика и редовни гостувания на световни диджеи.</p>
+            <p class="recommendations">Препоръки за подобрения: По-добра вентилация и по-голямо пространство.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Електронна музика, техно, хаус</p>
+                <p><strong>Работно време:</strong> Петък и събота от 22:00 до 05:00</p>
+                <p><strong>Адрес:</strong> бул. Цар Освободител 20, София</p>
+                <p><strong>Възрастова група:</strong> Над 18 години</p>
+                <p><strong>Интересен факт:</strong> Един от най-старите клубове в България, признат от DJ Magazine.</p>
+                <p><strong>Цена за вечер:</strong> 30-40 лв.</p>
+
+
+            </div>
+        </div>
+
+        <!-- София - PM Club -->
+        <div class="club" data-city="София">
+            <h3>PM Club, София</h3>
+            <p class="rating"><span class="star-rating">★★★★☆</span></p>
+            <p class="review">Рецензия: Един от най-популярните клубове в центъра, предлагащ разнообразие от музикални жанрове.</p>
+            <p class="recommendations">Препоръки за подобрения: По-достъпни опции за напитки или промоции.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Хип-хоп, R&B, електро</p>
+                <p><strong>Работно време:</strong> Сряда до неделя от 23:00 до 06:00</p>
+                <p><strong>Адрес:</strong> ул. Алабин 50, София</p>
+                <p><strong>Възрастова група:</strong> 21+ години</p>
+                <p><strong>Интересен факт:</strong> Често се посещава от известни личности и спортисти.</p>
+                <p><strong>Цена за вечер:</strong> 20-30 лв.</p>
+
+
+            </div>
+        </div>
+
+        <!-- Пловдив - Galaxy Live Club -->
+        <div class="club" data-city="Пловдив">
+            <h3>Galaxy Live Club, Пловдив</h3>
+            <p class="rating"><span class="star-rating">★★★★☆</span></p>
+            <p class="review">Рецензия: Голямо място с отлична атмосфера и музикално разнообразие.</p>
+            <p class="recommendations">Препоръки за подобрения: Увеличаване на персонала за по-бързо обслужване.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Поп, комерсиална музика, ретро вечери</p>
+                <p><strong>Работно време:</strong> Четвъртък до събота от 22:00 до 05:00</p>
+                <p><strong>Адрес:</strong> бул. Христо Ботев 82, Пловдив</p>
+                <p><strong>Възрастова група:</strong> 18+ години</p>
+                <p><strong>Интересен факт:</strong> Един от най-големите клубове в България, организиращ тематични партита.</p>
+                <p><strong>Цена за вечер:</strong> 25 лв.</p>
+
+
+            </div>
+        </div>
+
+        <!-- Пловдив - Club Atmosphere -->
+        <div class="club" data-city="Пловдив">
+            <h3>Club Atmosphere, Пловдив</h3>
+            <p class="rating"><span class="star-rating">★★★★☆</span></p>
+            <p class="review">Рецензия: Стилно място с уникален дизайн и страхотна атмосфера.</p>
+            <p class="recommendations">Препоръки за подобрения: Включване на нови коктейли в менюто.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Поп, хаус, R&B</p>
+                <p><strong>Работно време:</strong> Четвъртък до неделя от 22:00 до 05:00</p>
+                <p><strong>Адрес:</strong> бул. Княз Борис I 12, Пловдив</p>
+                <p><strong>Възрастова група:</strong> 18+ години</p>
+                <p><strong>Интересен факт:</strong> Често организира концерти на живо с нови артисти.</p>
+                <p><strong>Цена за вечер:</strong> 20 лв.</p>
+
+
+            </div>
+        </div>
+
+        <!-- Варна - Club Graffiti -->
+        <div class="club" data-city="Варна">
+            <h3>Club Graffiti, Варна</h3>
+            <p class="rating"><span class="star-rating">★★★★☆</span></p>
+            <p class="review">Рецензия: Стилно място с уникален дизайн и страхотна атмосфера.</p>
+            <p class="recommendations">Препоръки за подобрения: Включване на нови коктейли в менюто.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Поп, хаус, R&B</p>
+                <p><strong>Работно време:</strong> Четвъртък до неделя от 22:00 до 05:00</p>
+                <p><strong>Адрес:</strong> бул. Княз Борис I 12, Варна</p>
+                <p><strong>Възрастова група:</strong> 18+ години</p>
+                <p><strong>Интересен факт:</strong> Често организира концерти на живо с нови артисти.</p>
+                <p><strong>Цена за вечер:</strong> 30-50 лв.</p>
+
+
+            </div>
+        </div>
+
+        <!-- Бургас - Sunset Beach Bar -->
+        <div class="club" data-city="Бургас">
+            <h3>Sunset Beach Bar, Бургас</h3>
+            <p class="rating"><span class="star-rating">★★★★★</span></p>
+            <p class="review">Рецензия: Перфектно място за летните вечери с изключителна гледка към морето.</p>
+            <p class="recommendations">Препоръки за подобрения: Увеличаване на вечерните събития.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Летни хитове, реге, лаундж</p>
+                <p><strong>Работно време:</strong> Всеки ден от 18:00 до 02:00</p>
+                <p><strong>Адрес:</strong> ул. Първа 20, Бургас</p>
+                <p><strong>Възрастова група:</strong> 18+ години</p>
+                <p><strong>Интересен факт:</strong> Често провежда фестивали на открито с местни музиканти.</p>
+                <p><strong>Цена за вечер:</strong> 25-35 лв.</p>
+
+
+            </div>
+        </div>
+        <!-- Бургас - Planeta Payner Club -->
+        <div class="club" data-city="Бургас">
+            <h3>Planeta Payner Club, Бургас</h3>
+            <p class="rating"><span class="star-rating">★★★★★</span></p>
+            <p class="review">Рецензия: Място за любителите на поп-фолк музика с вълнуващи партита.</p>
+            <p class="recommendations">Препоръки за подобрения: Може да се организират повече тематични събития.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Поп-фолк</p>
+                <p><strong>Работно време:</strong> Сряда до неделя от 23:00 до 05:00</p>
+                <p><strong>Адрес:</strong> бул. Христо Ботев 22, Бургас</p>
+                <p><strong>Възрастова група:</strong> 18+ години</p>
+                <p><strong>Интересен факт:</strong> Популярен сред туристите и местните заради стилните партита.</p>
+                <p><strong>Цена за вечер:</strong> 40-50 лв.</p>
+
+
+            </div>
+        </div>
+
+        <!-- Русе - Club Europa -->
+        <div class="club" data-city="Русе">
+            <h3>Club Europa, Русе</h3>
+            <p class="rating"><span class="star-rating">★★★★☆</span></p>
+            <p class="review">Рецензия: Отлично място за парти с приятели, предлагайки разнообразие от напитки и музика.</p>
+            <p class="recommendations">Препоръки за подобрения: Увеличаване на капацитета през уикендите.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Хип-хоп, поп, комерсиален</p>
+                <p><strong>Работно време:</strong> Четвъртък до неделя от 22:00 до 05:00</p>
+                <p><strong>Адрес:</strong> ул. Борисова 18, Русе</p>
+                <p><strong>Възрастова група:</strong> 18+ години</p>
+                <p><strong>Интересен факт:</strong> Първоначално открит през 2005 г., клубът бързо печели популярност.</p>
+                <p><strong>Цена за вечер:</strong> 15-30 лв.</p>
+
+
+            </div>
+        </div>
+
+        <!-- Стара Загора - Club Exit -->
+        <div class="club" data-city="Стара Загора">
+            <h3>Club Exit, Стара Загора</h3>
+            <p class="rating"><span class="star-rating">★★★★☆</span></p>
+            <p class="review">Рецензия: Популярен клуб с голяма танцова площадка и страхотна атмосфера.</p>
+            <p class="recommendations">Препоръки за подобрения: Разширяване на менюто за хранене.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Електронна музика, поп</p>
+                <p><strong>Работно време:</strong> Четвъртък до неделя от 22:00 до 05:00</p>
+                <p><strong>Адрес:</strong> ул. Патриарх Евтимий 5, Стара Загора</p>
+                <p><strong>Възрастова група:</strong> 18+ години</p>
+                <p><strong>Интересен факт:</strong> Често организира тематични вечери и събития с живи изпълнители.</p>
+                <p><strong>Цена за вечер:</strong> 20-40 лв.</p>
+
+
+            </div>
+        </div>
+        <!-- Стара Загора - Club Zodiak -->
+        <div class="club" data-city="Стара Загора">
+            <h3>Club Zodiak, Стара Загора</h3>
+            <p class="rating"><span class="star-rating">★★★☆☆</span></p>
+            <p class="review">Рецензия: Клуб със забавна атмосфера и любими местни DJ-и.</p>
+            <p class="recommendations">Препоръки за подобрения: Леко обновяване на интериора.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Електронна, хаус</p>
+                <p><strong>Работно време:</strong> Четвъртък до събота от 23:00 до 06:00</p>
+                <p><strong>Адрес:</strong> ул. Ямбол 23, Стара Загора</p>
+                <p><strong>Възрастова група:</strong> 18+ години</p>
+                <p><strong>Интересен факт:</strong> Място за нестандартни събития и концерти.</p>
+                <p><strong>Цена за вечер:</strong> 35-45 лв.</p>
+
+
+            </div>
+        </div>
+        <!-- Велико Търново - Club Forte -->
+        <div class="club" data-city="Велико Търново">
+            <h3>Club Forte, Велико Търново</h3>
+            <p class="rating"><span class="star-rating">★★★★☆</span></p>
+            <p class="review">Рецензия: Стилен клуб с модерна атмосфера и разнообразие от стилове.</p>
+            <p class="recommendations">Препоръки за подобрения: Може да се увеличи броят на концерти на живо.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Рок, алтернативна музика</p>
+                <p><strong>Работно време:</strong> Четвъртък до неделя от 22:00 до 05:00</p>
+                <p><strong>Адрес:</strong> ул. Иван Вазов 18, Велико Търново</p>
+                <p><strong>Възрастова група:</strong> 18+ години</p>
+                <p><strong>Интересен факт:</strong> Популярен заради разнообразните събития и концерти на живо.</p>
+                <p><strong>Цена за вечер:</strong> 20-45 лв.</p>
+
+
+            </div>
+        </div>
+
+        <!-- Велико Търново - Club Rewind -->
+        <div class="club" data-city="Велико Търново">
+            <h3>Club Rewind, Велико Търново</h3>
+            <p class="rating"><span class="star-rating">★★★★☆</span></p>
+            <p class="review">Рецензия: Стилно място, предлагащо разнообразие от музикални стилове и страхотна атмосфера.</p>
+            <p class="recommendations">Препоръки за подобрения: Повече места за сядане.</p>
+            <div class="details">
+                <p><strong>Музикален стил:</strong> Ретро, поп, хаус</p>
+                <p><strong>Работно време:</strong> Четвъртък до неделя от 22:00 до 05:00</p>
+                <p><strong>Адрес:</strong> ул. Гоце Делчев 10, Велико Търново</p>
+                <p><strong>Възрастова група:</strong> 18+ години</p>
+                <p><strong>Интересен факт:</strong> Организира партита с DJ, които предлагат уникален опит.</p>
+                <p><strong>Цена за вечер:</strong> 30-45 лв.</p>
+
+
+            </div>
+        </div>
+    </div>
+        <footer>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#facebook">Facebook</a>
+            <a href="#twitter">Twitter</a>
+            <a class="secret" href="/GroupSite-Habibi-Hotel-2/GroupSite-main/CasioPremiumMeet/HikoPiko.html">@</a>
+    </footer>
+
+
+    <script>
+        function filterClubs() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let dropdown = document.getElementById('cityDropdown').value.toLowerCase();
+            let clubs = document.getElementsByClassName('club');
+           
+
+
+            for (let i = 0; i < clubs.length; i++) {
+                let clubName = clubs[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                let clubCity = clubs[i].getAttribute('data-city').toLowerCase();
+
+                // Показване на клуба само ако името и градът съответстват на търсенето
+                if (clubName.includes(input) && (dropdown === "всички" || clubCity === dropdown)) {
+                    clubs[i].style.display = ''; 
+                } else {
+                    clubs[i].style.display = 'none';
+                }
+            }
+        }
+    
+
+
+        // Анимация при зареждане на клубовете
+        window.onload = function() {
+            let clubs = document.getElementsByClassName('club');
+            for (let i = 0; i < clubs.length; i++) {
+                clubs[i].style.animationDelay = `${i * 0.05}s`; // Ускорено закъснение
+            }
+        };
+    </script>
+
+</body>
+</html>

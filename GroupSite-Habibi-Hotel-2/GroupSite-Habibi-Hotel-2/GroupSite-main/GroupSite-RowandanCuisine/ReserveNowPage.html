@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve Now - The Reviewers</title>
+  <link rel="stylesheet" href="styleBookNowPage.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">The Reviewers</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="SofiaRestaurants.html">Restaurants</a>
+    </nav>
+  </header>
+
+  <!-- Reservation Form -->
+  <main>
+    <div class="reservation-container">
+      <!-- Date Section -->
+      <div class="date-container">
+        <h2>Reservation Date</h2>
+        <input type="date" id="reservation-date" class="date-input">
+      </div>
+
+      <!-- Full Name Section -->
+      <div class="full-name-container">
+        <h2>Reservation Name</h2>
+        <form id="full-name-form">
+          <input type="text" id="first-name" placeholder="First Name" class="name-input" required>
+          <input type="text" id="last-name" placeholder="Last Name" class="name-input" required>
+        </form>
+      </div>
+
+      <!-- Guests Section -->
+      <div class="guests-container">
+        <h2>Number of Guests</h2>
+        <select id="num-guests" class="guests-dropdown" required>
+          <option value="" disabled selected>Select Guests</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <!-- Reserve Now Button -->
+      <button type="button" class="reserve-now-btn" onclick="alert('Reservation Confirmed!')">Reserve Now</button>
+    </div>
+  </main>
+</body>
+</html>

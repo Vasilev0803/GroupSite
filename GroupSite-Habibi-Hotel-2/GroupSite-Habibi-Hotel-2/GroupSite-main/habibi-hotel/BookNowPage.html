@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now - The Reviewers</title>
+  <link rel="stylesheet" href="styleBookNowPage.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">The Reviewers</div>
+    <nav>
+      <a href="/GroupSite-Habibi-Hotel-2/GroupSite-main/HomePage/homePage.html">Home</a>
+      <a href="/GroupSite-Habibi-Hotel-2/GroupSite-main/habibi-hotel/BERKENTMONT.html">Hotels</a>
+      <a href="/GroupSite-Habibi-Hotel-2/GroupSite-main/diskoteki/diskoteki.html">Discos</a>
+      <a href="/GroupSite-Habibi-Hotel-2/GroupSite-main/Casino.html">Casinos</a>
+      <a href="#">Restaurants</a>
+    </nav>
+  </header>
+
+  <!-- Booking Form -->
+  <main>
+    <div class="booking-container">
+      <!-- Calendar Section -->
+      <div class="calendar-container">
+        <h2>Stay Dates</h2>
+        <input type="date" id="start-date" class="date-input">
+        <input type="date" id="end-date" class="date-input">
+      </div>
+
+      <!-- Full Name Section -->
+      <div class="full-name-container">
+        <h2>Reservation Name</h2>
+        <form id="full-name-form">
+          <input type="text" id="first-name" placeholder="First Name" class="name-input" required>
+          <input type="text" id="last-name" placeholder="Last Name" class="name-input" required>
+        </form>
+      </div>
+
+      <!-- Guests and Rooms Section -->
+      <div class="guests-rooms-container">
+        <h2>Guests & Rooms</h2>
+        <form id="guests-rooms-form">
+          <!-- Guests Dropdown -->
+          <select id="num-people" name="guests" class="people-dropdown" required>
+            <option value="" disabled selected>Guests</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+
+          <!-- Rooms Dropdown -->
+          <select id="num-rooms" name="rooms" class="people-dropdown" required>
+            <option value="" disabled selected>Rooms</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </form>
+      </div>
+
+      <!-- Book Now Button -->
+      <button type="button" class="book-now-btn" onclick="window.location.reload();">Book Now</button>
+    </div>
+  </main>
+
+</body>
+</html>
