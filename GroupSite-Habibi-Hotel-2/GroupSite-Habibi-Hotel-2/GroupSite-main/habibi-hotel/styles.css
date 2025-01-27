@@ -20,6 +20,9 @@ header {
   align-items: center; /* Center items vertically */
 }
 
+
+
+
 /* Header navigation container */
 header nav {
   display: flex;
@@ -84,7 +87,7 @@ header nav a:hover {
 
 /* Main content layout */
 main {
-  /*background-color: #1a2b45;*/
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,6 +149,30 @@ main {
     height: 100%; /* Make cards uniform in height */
     min-height: 450px; /* Ensure consistent card size */
   }
+  /* Set the page background color */
+body {
+  background-color: #1a2b45;
+  color: #ecf0f1; /* Optional: Set text color for better contrast */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Ensure hotel cards remain white */
+.hotel-card {
+  background-color: #ffffff; /* White background for hotel cards */
+  border: 1px solid #bdc3c7; /* Light border for separation */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Prevent overflow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Maintain white interior for hotel info */
+.hotel-info {
+  background-color: #ffffff; /* Ensure white background inside the card */
+  color: #2c3e50; /* Text color for readability */
+}
+
 
   /* Hotel image styling (uniform size for all images) */
   .hotel-card img {
@@ -257,46 +284,19 @@ main {
   background-color: #16a085; /* Darker teal */
   transform: scale(1.05); /* Slight enlargement on hover */
 }
-/* Footer */
+/* Footer Styling */
 footer {
   background-color: #1abc9c;
   color: #ffffff;
-  padding: 20px;
   text-align: center;
-  margin-top: auto;
+  padding: 20px;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ensure it spans the entire width */
+  width: 100%; /* Full width */
+  margin: 0; /* Remove any default margin */
+  box-sizing: border-box; /* Include padding in the width */
 }
 
-/* Footer links styling */
-footer .footer-links {
-  margin-bottom: 10px;
-}
-
-/* Footer link styling */
-footer a {
-  color: #34495e;
-  text-decoration: none;
-  margin: 0 10px;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #ecf0f1;
-}
-
-/* Secret Section */
-footer .secret {
-  color: transparent;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-/* Ensures footer is properly placed inside */
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center content */
-  justify-content: center;
-  margin-top: 40px; /* Ensure it's not too close to content above */
+/* Reset overflow issues */
+body {
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
