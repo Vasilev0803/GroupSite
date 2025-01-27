@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurants Page - The Reviewers</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header>
+      <div class="logo">The Reviewers</div>
+      <input type="text" placeholder="Search your restaurant here" id="search-bar">
+      <nav>
+        <a href="#">Home</a>
+        <a href="SofiaRestaurants.html">Restaurants</a>
+      </nav>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="filters">
+      <h2>Filters</h2>
+      <label>Price Range</label>
+      <div class="price-range">
+        <input type="number" placeholder="From" min="0" id="min-price">
+        <input type="number" placeholder="To" min="0" id="max-price">
+        <button onclick="filterRestaurants()">Apply Filters</button>
+        <button onclick="resetFilters()">Reset Filters</button>
+      </div>
+      <label>Star Rating</label>
+      <select id="star-rating">
+        <option value="all">All</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+      </select>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+      <section class="restaurant-listings">
+        <!-- Restaurant 1 -->
+        <article class="restaurant-card" data-name="La Prima By Friends" data-price="30">
+          <img src="https://lh3.googleusercontent.com/p/AF1QipPXEWRAUSadv-hbrM5REXaTwW-V_UMLnauFgL_G=s1360-w1360-h1020-rw" alt="La Prima By Friends">
+          <div class="restaurant-info">
+            <h3>La Prima By Friends</h3>
+            <p>A fine dining experience featuring Italian cuisine with a modern twist, located in the heart of Sofia.</p>
+            <p>Rating: ⭐⭐⭐⭐⭐</p>
+            <p>Starting at $30/meal</p>
+          </div>
+        </article>
+
+        <!-- Restaurant 2 -->
+        <article class="restaurant-card" data-name="Happy Bar & Grill Kableshkov" data-price="20">
+          <img src="https://lh3.googleusercontent.com/p/AF1QipOXYKRC83f-wBn3pqDy-BdslyOeAPh7YnnDzgZx=s1360-w1360-h1020-rw" alt="Happy Bar & Grill Kableshkov">
+          <div class="restaurant-info">
+            <h3>Happy Bar & Grill Kableshkov</h3>
+            <p>This restaurant offers food from most cultures at a reasonable price, perfect for casual dining.</p>
+            <p>Rating: ⭐⭐⭐⭐</p>
+            <p>Starting at $20/meal</p>
+          </div>
+        </article>
+
+        <!-- Add more restaurants as needed -->
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>Quick Links: About Us | Contact | Careers | Privacy Policy</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Adjust the JS functions for restaurants
+    function filterRestaurants() {
+      const minPrice = parseInt(document.getElementById("min-price").value) || 0;
+      const maxPrice = parseInt(document.getElementById("max-price").value) || Infinity;
+      const starRating = document.getElementById("star-rating").value;
+
+      const restaurantCards = document.querySelectorAll(".restaurant-card");
+      restaurantCards.forEach(card => {
+        const price = parseInt(card.getAttribute("data-price"));
+        const stars = parseInt(card.getAttribute("data-stars"));
+
+        const matchesPrice = price >= minPrice && price <= maxPrice;
+        const matchesStars = starRating === "all" || stars === parseInt(starRating);
+
+        card.style.display = matchesPrice && matchesStars ? "block" : "none";
+      });
+    }
+
+    function resetFilters() {
+      document.getElementById("min-price").value = "";
+      document.getElementById("max-price").value = "";
+      document.getElementById("star-rating").value = "all";
+      document.getElementById("search-bar").value = "";
+
+      const restaurantCards = document.querySelectorAll(".restaurant-card");
+      restaurantCards.forEach(card => {
+        card.style.display = "block";
+      });
+    }
+  </script>
+</body>
+</html>
